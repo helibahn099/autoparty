@@ -1,4 +1,4 @@
-# avtoparty
+# autoparty
 
 B2C-сервис **поиска** автомобильных запчастей в Кыргызстане. Это агрегатор запросов, **не магазин**: клиент платит только за поиск, продавцы отвечают по наличию и цене, клиент сам выбирает, у кого забирать деталь. Покупка, доставка и гарантия детали — вне продукта.
 
@@ -48,14 +48,14 @@ OpenAPI: http://localhost/api/docs
 
 | Роль | Email | Заметки |
 |------|-------|---------|
-| Клиент | `client1@avtoparty.demo` | Есть демо-заказ и гараж |
-| Клиент | `client2@avtoparty.demo` | |
-| Клиент | `client3@avtoparty.demo` | |
-| Продавец | `seller1@avtoparty.demo` | АвтоСклад Бишкек, партнёр уровень 5 |
-| Продавец | `seller2@avtoparty.demo` | Бишкек / Ош |
-| Продавец | `seller3@avtoparty.demo` | |
-| Продавец | `seller4@avtoparty.demo` | |
-| Админ | `admin@avtoparty.demo` | `/admin` |
+| Клиент | `client1@autoparty.demo` | Есть демо-заказ и гараж |
+| Клиент | `client2@autoparty.demo` | |
+| Клиент | `client3@autoparty.demo` | |
+| Продавец | `seller1@autoparty.demo` | АвтоСклад Бишкек, партнёр уровень 5 |
+| Продавец | `seller2@autoparty.demo` | Бишкек / Ош |
+| Продавец | `seller3@autoparty.demo` | |
+| Продавец | `seller4@autoparty.demo` | |
+| Админ | `admin@autoparty.demo` | `/admin` |
 
 ## Как этим пользуются сейчас
 
