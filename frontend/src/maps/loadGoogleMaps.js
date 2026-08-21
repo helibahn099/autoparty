@@ -2,8 +2,10 @@ const BISHKEK = { lat: 42.8746, lng: 74.5698 };
 
 let pending = null;
 
+const DEMO_MAPS_KEY = "AIzaSyDEAwt4f_J-9T4-YvBn37n_DIv_cyxrlvw";
+
 export function getGoogleMapsKey() {
-  return String(import.meta.env.VITE_GOOGLE_MAPS_API_KEY || "").trim();
+  return String(import.meta.env.VITE_GOOGLE_MAPS_API_KEY || DEMO_MAPS_KEY).trim();
 }
 
 export function toLatLng(center) {
