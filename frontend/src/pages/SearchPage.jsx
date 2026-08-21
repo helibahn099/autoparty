@@ -5,8 +5,8 @@ import { useAuth } from "../auth";
 import { useI18n } from "../i18n";
 
 const YEARS = Array.from({ length: 27 }, (_, i) => 2026 - i);
-const CITY_KEY = "avtoparty_city_ids";
-const CONSENT_KEY = "avtoparty_cookie_ok";
+const CITY_KEY = "autoparty_city_ids";
+const CONSENT_KEY = "autoparty_cookie_ok";
 const BISHKEK_CENTER = [42.8746, 74.5698];
 
 function findBishkek(cities) {
@@ -28,7 +28,7 @@ function readSavedCities() {
 function persistCities(ids, cookies) {
   localStorage.setItem(CITY_KEY, JSON.stringify(ids));
   if (cookies) {
-    document.cookie = `avtoparty_city=${ids.join(",")};max-age=31536000;path=/;SameSite=Lax`;
+    document.cookie = `autoparty_city=${ids.join(",")};max-age=31536000;path=/;SameSite=Lax`;
   }
 }
 

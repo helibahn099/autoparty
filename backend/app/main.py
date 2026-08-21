@@ -21,7 +21,7 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(
-    title="avtoparty API",
+    title="autoparty API",
     version="0.1.0",
     lifespan=lifespan,
     docs_url="/api/docs",

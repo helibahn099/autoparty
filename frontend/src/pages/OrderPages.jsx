@@ -94,10 +94,10 @@ export function OrderDetailPage() {
       const msg = e.detail;
       if (msg?.data?.order_id == id || msg.event === "offer.new") load().catch(() => {});
     };
-    window.addEventListener("avtoparty-ws", onWs);
+    window.addEventListener("autoparty-ws", onWs);
     const t = setInterval(() => load().catch(() => {}), 5000);
     return () => {
-      window.removeEventListener("avtoparty-ws", onWs);
+      window.removeEventListener("autoparty-ws", onWs);
       clearInterval(t);
     };
   }, [id]);

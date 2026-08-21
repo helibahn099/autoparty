@@ -8,7 +8,7 @@ export function LoginPage() {
   const { t, lang, setLang } = useI18n();
   const nav = useNavigate();
   const loc = useLocation();
-  const [email, setEmail] = useState("client1@avtoparty.demo");
+  const [email, setEmail] = useState("client1@autoparty.demo");
   const [password, setPassword] = useState("qweasdzxc");
   const [error, setError] = useState("");
 
@@ -28,7 +28,7 @@ export function LoginPage() {
     <div className="auth-wrap">
       <form className="auth-card" onSubmit={onSubmit}>
         <div className="brand" style={{ marginBottom: 16 }}>
-          <span className="logo-mark">ap</span> avtoparty
+          <span className="logo-mark">ap</span> autoparty
         </div>
         <h2>{t("auth.login")}</h2>
         <p className="muted">{t("auth.demo")}</p>

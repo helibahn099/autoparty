@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
 import { LANGS, MESSAGES } from "./messages";
 
-const LANG_KEY = "avtoparty_lang";
+const LANG_KEY = "autoparty_lang";
 const I18nContext = createContext(null);
 
 export function I18nProvider({ children }) {

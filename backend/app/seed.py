@@ -152,7 +152,7 @@ CITY_COORDS = {
 }
 
 SELLER_PLACES = {
-    "seller1@avtoparty.demo": {
+    "seller1@autoparty.demo": {
         "address": "ул. Киевская 148, Бишкек",
         "lat": 42.8746,
         "lng": 74.5698,
@@ -161,7 +161,7 @@ SELLER_PLACES = {
         "instagram": "avtosklad.kg",
         "pickup_note": "Самовывоз 09:00–19:00, доставка по Бишкеку",
     },
-    "seller2@avtoparty.demo": {
+    "seller2@autoparty.demo": {
         "address": "ул. Ахунбаева 95, Бишкек",
         "lat": 42.8554,
         "lng": 74.6122,
@@ -170,7 +170,7 @@ SELLER_PLACES = {
         "instagram": "osh.parts",
         "pickup_note": "Самовывоз и доставка по Бишкеку / Ошу",
     },
-    "seller3@avtoparty.demo": {
+    "seller3@autoparty.demo": {
         "address": "ул. Гагарина 12, Каракол",
         "lat": 42.4907,
         "lng": 78.3936,
@@ -179,7 +179,7 @@ SELLER_PLACES = {
         "instagram": "issykkul.auto",
         "pickup_note": "Самовывоз, доставка по Иссык-Кулю",
     },
-    "seller4@avtoparty.demo": {
+    "seller4@autoparty.demo": {
         "address": "ул. Ленина 220, Ош",
         "lat": 40.5283,
         "lng": 72.7985,
@@ -362,7 +362,7 @@ def ensure_seller(
         seller.telegram = place["telegram"]
         seller.instagram = place["instagram"]
         seller.pickup_note = place["pickup_note"]
-    if user.email == "seller1@avtoparty.demo":
+    if user.email == "seller1@autoparty.demo":
         seller.is_partner = True
         seller.partner_level = 5
     refresh_seller_scores(seller)
@@ -577,15 +577,15 @@ def run_seed() -> None:
         seed_vehicles(db)
         seed_parts(db, categories)
 
-        admin = ensure_user(db, "admin@avtoparty.demo", "Администратор", UserRole.ADMIN, "+996500000001")
-        client1 = ensure_user(db, "client1@avtoparty.demo", "Айбек Клиент", UserRole.CLIENT, "+996555111001")
-        client2 = ensure_user(db, "client2@avtoparty.demo", "Алина Клиент", UserRole.CLIENT, "+996555111002")
-        client3 = ensure_user(db, "client3@avtoparty.demo", "Нурлан Клиент", UserRole.CLIENT, "+996555111003")
+        admin = ensure_user(db, "admin@autoparty.demo", "Администратор", UserRole.ADMIN, "+996500000001")
+        client1 = ensure_user(db, "client1@autoparty.demo", "Айбек Клиент", UserRole.CLIENT, "+996555111001")
+        client2 = ensure_user(db, "client2@autoparty.demo", "Алина Клиент", UserRole.CLIENT, "+996555111002")
+        client3 = ensure_user(db, "client3@autoparty.demo", "Нурлан Клиент", UserRole.CLIENT, "+996555111003")
 
-        s1u = ensure_user(db, "seller1@avtoparty.demo", "АвтоСклад Бишкек", UserRole.SELLER, "+996555222001")
-        s2u = ensure_user(db, "seller2@avtoparty.demo", "Osh Parts", UserRole.SELLER, "+996555222002")
-        s3u = ensure_user(db, "seller3@avtoparty.demo", "IssykKul Auto", UserRole.SELLER, "+996555222003")
-        s4u = ensure_user(db, "seller4@avtoparty.demo", "Юг Авто", UserRole.SELLER, "+996555222004")
+        s1u = ensure_user(db, "seller1@autoparty.demo", "АвтоСклад Бишкек", UserRole.SELLER, "+996555222001")
+        s2u = ensure_user(db, "seller2@autoparty.demo", "Osh Parts", UserRole.SELLER, "+996555222002")
+        s3u = ensure_user(db, "seller3@autoparty.demo", "IssykKul Auto", UserRole.SELLER, "+996555222003")
+        s4u = ensure_user(db, "seller4@autoparty.demo", "Юг Авто", UserRole.SELLER, "+996555222004")
 
         seller1 = ensure_seller(
             db,

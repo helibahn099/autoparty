@@ -45,7 +45,7 @@ export function ChatPage() {
   async function load() {
     const data = await api(`/chats/${id}`);
     setChat(data);
-    window.dispatchEvent(new Event("avtoparty-unread"));
+    window.dispatchEvent(new Event("autoparty-unread"));
   }
 
   useEffect(() => {
@@ -55,8 +55,8 @@ export function ChatPage() {
         setChat((prev) => prev ? { ...prev, messages: [...(prev.messages || []), e.detail.data] } : prev);
       }
     };
-    window.addEventListener("avtoparty-ws", onWs);
-    return () => window.removeEventListener("avtoparty-ws", onWs);
+    window.addEventListener("autoparty-ws", onWs);
+    return () => window.removeEventListener("autoparty-ws", onWs);
   }, [id]);
 
   useEffect(() => {

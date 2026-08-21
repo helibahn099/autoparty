@@ -22,12 +22,18 @@ browser → nginx :80 → FastAPI :8000 → PostgreSQL
 
 ## Запуск
 
+На сервере (IP `3.75.225.249`) и локально одно и то же:
+
 ```bash
-docker compose up --build
+docker compose up --build -d
 ```
 
-Сайт: http://localhost  
-OpenAPI: http://localhost/api/docs
+Боевой сайт: http://3.75.225.249  
+OpenAPI: http://3.75.225.249/api/docs  
+
+Настройки в корневом `.env` (файл **в репозитории**): `PUBLIC_URL=http://3.75.225.249`. QR демо-оплаты собирается из этого адреса. Compose читает `.env` сам — отдельно ничего экспортировать не нужно.
+
+Порт **80** должен быть открыт на машине. После смены `VITE_GOOGLE_MAPS_API_KEY` — снова `--build`.
 
 Первый старт: Postgres → `alembic upgrade head` → идемпотентный `python -m app.seed` → uvicorn. Повторный seed не плодит дубликаты. Колонки/таблицы поверх старого volume дотягивает `backend/app/schema_upgrade.py` (вызывается и из alembic, и при старте API).
 
@@ -38,7 +44,7 @@ OpenAPI: http://localhost/api/docs
 1. [Google Cloud Console](https://console.cloud.google.com/) — проект и **биллинг** (у Google он обязателен, есть бесплатный кредит).
 2. Включить **Maps JavaScript API**.
 3. Создать API key, ограничить:
-   - HTTP referrers: `http://localhost/*`, боевой домен;
+   - HTTP referrers: `http://3.75.225.249/*`, `http://localhost/*`;
    - API: только Maps JavaScript API.
 4. Вписать ключ в `.env`: `VITE_GOOGLE_MAPS_API_KEY=...`
 

@@ -45,7 +45,7 @@ function Layout({ children }) {
     const ws = new WebSocket(`${proto}://${window.location.host}/api/ws?token=${token}`);
     ws.onmessage = (ev) => {
       const msg = JSON.parse(ev.data);
-      window.dispatchEvent(new CustomEvent("avtoparty-ws", { detail: msg }));
+      window.dispatchEvent(new CustomEvent("autoparty-ws", { detail: msg }));
       if (msg.event === "chat.message" || msg.event === "notification") {
         refreshUnread();
       }
@@ -55,10 +55,10 @@ function Layout({ children }) {
       }
     };
     const onRefresh = () => refreshUnread();
-    window.addEventListener("avtoparty-unread", onRefresh);
+    window.addEventListener("autoparty-unread", onRefresh);
     return () => {
       ws.close();
-      window.removeEventListener("avtoparty-unread", onRefresh);
+      window.removeEventListener("autoparty-unread", onRefresh);
     };
   }, [user, refreshUnread]);
 
@@ -67,7 +67,7 @@ function Layout({ children }) {
       <header className="topbar">
         <Link to="/" className="brand">
           <span className="logo-mark">ap</span>
-          avtoparty
+          autoparty
         </Link>
         <div className="top-actions">
           <div className="lang-switch">

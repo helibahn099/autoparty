@@ -4,8 +4,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
-    DATABASE_URL: str = "postgresql+psycopg2://avtoparty:avtoparty@db:5432/avtoparty"
-    JWT_SECRET: str = "change-me-in-production-avtoparty-demo-secret"
+    DATABASE_URL: str = "postgresql+psycopg2://autoparty:autoparty@db:5432/autoparty"
+    JWT_SECRET: str = "change-me-in-production-autoparty-demo-secret"
     JWT_ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
 

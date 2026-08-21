@@ -30,7 +30,7 @@ export function loadGoogleMaps(lang = "ru") {
   if (pending) return pending;
 
   pending = new Promise((resolve, reject) => {
-    const existing = document.querySelector("script[data-avtoparty-gmaps]");
+    const existing = document.querySelector("script[data-autoparty-gmaps]");
     if (existing) {
       existing.addEventListener("load", () => resolve(window.google.maps), { once: true });
       existing.addEventListener("error", () => reject(new Error("load-failed")), { once: true });
@@ -45,7 +45,7 @@ export function loadGoogleMaps(lang = "ru") {
     });
     script.src = `https://maps.googleapis.com/maps/api/js?${params}`;
     script.async = true;
-    script.dataset.avtopartyGmaps = "1";
+    script.dataset.autopartyGmaps = "1";
     script.onload = () => {
       if (!window.google?.maps?.Map) {
         pending = null;

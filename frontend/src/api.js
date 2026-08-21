@@ -1,7 +1,7 @@
 export async function api(path, { method = "GET", body, form } = {}) {
   const token = localStorage.getItem("token");
   const headers = {
-    "Accept-Language": localStorage.getItem("avtoparty_lang") || "ru",
+    "Accept-Language": localStorage.getItem("autoparty_lang") || "ru",
   };
   if (token) headers.Authorization = `Bearer ${token}`;
   let payload;

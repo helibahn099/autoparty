@@ -1,1 +1,1 @@
-# avtoparty backend
+# autoparty backend

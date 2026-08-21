@@ -19,10 +19,10 @@ export function SellerRequestsPage() {
     const onWs = (e) => {
       if (e.detail?.event === "notification" && e.detail.data?.type === "NEW_REQUEST") load();
     };
-    window.addEventListener("avtoparty-ws", onWs);
+    window.addEventListener("autoparty-ws", onWs);
     const timer = setInterval(load, 4000);
     return () => {
-      window.removeEventListener("avtoparty-ws", onWs);
+      window.removeEventListener("autoparty-ws", onWs);
       clearInterval(timer);
     };
   }, []);
